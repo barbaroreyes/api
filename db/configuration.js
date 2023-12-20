@@ -3,9 +3,9 @@ const doenv = require('dotenv');
 doenv.config();
 
 const db = mysql.createPool({
-    host:"localhost",
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD ,
+    host: "localhost",
+    user: 'root',
+    password:"Alarolle1978" ,
     database: 'metas',
 })
 

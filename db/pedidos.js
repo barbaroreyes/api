@@ -3,7 +3,7 @@ const db = require('./configuration')
  function pedirTodas(req, res, next) { 
       const que = "select * from metas"
         db.query(que, (err,data) => {
-            if(err) return res.next(err)
+            if(err) return next(err)
             res.json(data);
         })
     
