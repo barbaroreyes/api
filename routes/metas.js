@@ -1,9 +1,18 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+
+
+const {pedirTodas ,crearUna, pedirUna, borrarUna,actualizar} = require('../db/pedidos.js')
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a metas app');
-});
+router.get('/', pedirTodas);
+router.get('/:id', pedirUna);
+
+
+router.post('/', crearUna);
+
+router.put('/:id', actualizar);
+
+router.delete('/:id', borrarUna);
 
 module.exports = router;
